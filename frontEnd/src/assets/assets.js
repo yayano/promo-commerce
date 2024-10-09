@@ -1,8 +1,8 @@
 import p_img1 from "./p_img1.png";
 import p_img2_1 from "./p_img2_1.png";
+import p_img2 from "./p_img2.png";
 import p_img2_2 from "./p_img2_2.png";
 import p_img2_3 from "./p_img2_3.png";
-import p_img2_4 from "./p_img2_4.png";
 import p_img3 from "./p_img3.png";
 import p_img4 from "./p_img4.png";
 import p_img5 from "./p_img5.png";
@@ -97,26 +97,26 @@ export const assets = {
 export const products = [
   {
     _id: "aaaaa",
-    name: "Women Round Neck Cotton Top",
+    name: "Antichoc Samsung A14",
     description:
       "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-    price: 100,
+    price: 700,
     image: [p_img1],
-    category: "Women",
-    subCategory: "Topwear",
+    category: "Accessoire",
+    subCategory: "Phone",
     sizes: ["S", "M", "L"],
     date: 1716634345448,
     bestseller: true,
   },
   {
     _id: "aaaab",
-    name: "Men Round Neck Pure Cotton T-shirt",
+    name: "Manette pubg SP+ 2000mAh",
     description:
-      "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
-    price: 200,
-    image: [p_img2_1, p_img2_2, p_img2_3, p_img2_4],
-    category: "Men",
-    subCategory: "Topwear",
+      "The SP+ 2000mAh is a wireless game controller designed for PUBG and other mobile games. It features a built-in 2000mAh battery, offering extended playtime without frequent recharging. ",
+    price: 1500,
+    image: [p_img2, p_img2_1, p_img2_2, p_img2_3],
+    category: "Accessoire",
+    subCategory: "Gaming",
     sizes: ["M", "L", "XL"],
     date: 1716621345448,
     bestseller: true,
