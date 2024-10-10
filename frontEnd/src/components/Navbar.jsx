@@ -5,7 +5,8 @@ import { ShopContext } from "../context/ShopContext";
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
-  const { setShowSearch, showSearch, getCartCount } = useContext(ShopContext);
+  const { setShowSearch, showSearch, getCartCount, updateQuantity } =
+    useContext(ShopContext);
   return (
     <div className="flex items-center justify-between py-5 font-medium">
       <Link to="/">
