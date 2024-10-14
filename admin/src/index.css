@@ -6,6 +6,13 @@
 * {
   font-family: Outfit;
 }
+select,
+input,
+textarea {
+  border: 1px solid #ebf2ff;
+  outline-color: #86aec5;
+  border-radius: 4px;
+}
 .active {
   background-color: #ebf2ff;
   border-color: #86aec5;
