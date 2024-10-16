@@ -86,6 +86,12 @@ const ShopContextProvider = (props) => {
     getProductsData();
   }, []);
 
+  useEffect(() => {
+    if (!token && localStorage.getItem("token")) {
+      setToken(localStorage.getItem("token"));
+    }
+  }, [token]);
+
   const value = {
     products,
     currency,
@@ -95,6 +101,7 @@ const ShopContextProvider = (props) => {
     showSearch,
     setShowSearch,
     cartItems,
+    setCartItems,
     addToCart,
     getCartCount,
     updateQuantity,
