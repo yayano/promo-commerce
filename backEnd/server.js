@@ -5,6 +5,7 @@ import connectDB from "./config/mongodb.js";
 import connectCloudinary from "./config/cloudinary.js";
 import userRouter from "./routes/userRoute.js";
 import productRouter from "./routes/productRoute.js";
+import cartRouter from "./routes/cartRoute.js";
 
 //app config
 const app = express();
@@ -22,5 +23,6 @@ app.use("/api/products", productRouter);
 app.get("/", (req, res) => {
   res.send("API Working");
 });
+app.use("/api/cart", cartRouter);
 
 app.listen(port, () => console.log("server is running on port :" + port));
