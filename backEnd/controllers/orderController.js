@@ -1,5 +1,6 @@
 import userModel from "../models/userModel.js";
 import orderModel from "../models/orderModel.js";
+
 //placing orders using COD function
 const placeOrder = async (req, res) => {
   try {
@@ -22,11 +23,6 @@ const placeOrder = async (req, res) => {
     res.json({ success: false, message: error.message });
   }
 };
-
-//placing orders using stripe function
-const placeOrderStripe = async (req, res) => {};
-//placing orders using razorpay function
-const placeOrderRazorpay = async (req, res) => {};
 
 //all orders data for Admin Panel
 const allOrders = async (req, res) => {
@@ -63,11 +59,4 @@ const updateStatus = async (req, res) => {
   }
 };
 
-export {
-  placeOrder,
-  placeOrderStripe,
-  placeOrderRazorpay,
-  allOrders,
-  userOrders,
-  updateStatus,
-};
+export { placeOrder, allOrders, userOrders, updateStatus };
