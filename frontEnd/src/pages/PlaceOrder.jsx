@@ -4,6 +4,7 @@ import CartTotal from "../components/CartTotal";
 import { assets } from "../assets/assets";
 import { ShopContext } from "../context/ShopContext";
 import { toast } from "react-toastify";
+import axios from "axios";
 
 const PlaceOrder = () => {
   const [method, setMethod] = useState("cod");
@@ -17,7 +18,7 @@ const PlaceOrder = () => {
     delivery_fee,
     products,
   } = useContext(ShopContext);
-  const { formData, setFormData } = useState({
+  const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
@@ -52,7 +53,7 @@ const PlaceOrder = () => {
         }
       }
       let orderData = {
-        address: formData.address,
+        address: formData,
         items: orderItems,
         amount: getCartAmount() + delivery_fee,
       };
@@ -82,6 +83,7 @@ const PlaceOrder = () => {
   return (
     <form className="flex flex-col sm:flex-row justify-between gap-4 pt-5 sm:pt-14 min-h-[80vh] border-t">
       {/**---------------Left Side --------------- */}
+      {console.log(formData)}
       <div className="flex flex-col gap-4 w-full sm:max-w-[480px]">
         <div className="text-xl sm:text-2xl my-3 ">
           <Title text1={"DELIVERY"} text2={"INFORMATION"} />
@@ -214,6 +216,7 @@ const PlaceOrder = () => {
             <button
               className="bg-black text-white px-16 py-3 text-sm"
               type="submit"
+              onClick={onSubmitHandler}
             >
               PLACE ORDER
             </button>
