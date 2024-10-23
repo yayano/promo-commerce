@@ -11,12 +11,14 @@ const Collection = () => {
   const [category, setCategory] = useState([]);
   const [subCategory, setSubCategory] = useState([]);
   const [sortType, setSortType] = useState("relavent");
+
   const toggleCategory = (e) => {
     if (category.includes(e.target.value)) {
       setCategory((prev) => prev.filter((item) => item !== e.target.value));
     } else {
       setCategory((prev) => [...prev, e.target.value]);
     }
+    console.log(category, "category");
   };
   const toggleSubCategory = (e) => {
     if (subCategory.includes(e.target.value)) {
@@ -27,6 +29,7 @@ const Collection = () => {
   };
   const applyFilter = () => {
     let productsCopy = products.slice();
+    console.log("1", productsCopy);
     if (showSearch && search) {
       productsCopy = productsCopy.filter((item) =>
         item.name.toLowerCase().includes(search.toLowerCase())

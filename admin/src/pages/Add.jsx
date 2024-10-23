@@ -146,9 +146,9 @@ const Add = ({ token }) => {
             onChange={(e) => setCategory(e.target.value)}
             className="w-full px-3 py-2"
           >
-            <option value="phone">Phone</option>
-            <option value="accessoires">Accessoires</option>
-            <option value="pc">PC</option>
+            <option value="Phone">Phone</option>
+            <option value="Accessoires">Accessoires</option>
+            <option value="PC">PC</option>
           </select>
         </div>
         <div>
@@ -157,9 +157,9 @@ const Add = ({ token }) => {
             onChange={(e) => setSubCategory(e.target.value)}
             className="w-full px-3 py-2"
           >
-            <option value="audio">Audio</option>
-            <option value="confort">Confort</option>
-            <option value="chargement">Chargement</option>
+            <option value="Audio">Audio</option>
+            <option value="Confort">Confort</option>
+            <option value="Chargement">Chargement</option>
           </select>
         </div>
         <div>
