@@ -72,7 +72,7 @@ const Collection = () => {
           onClick={() => setShowFilter(!showFilter)}
           className="my-2 text-xl flex items-center cursor-pointer gap-2"
         >
-          FILTERS
+          FILTRES
           <img
             className={`h-3 sm:hidden ${showFilter ? "rotate-90" : ""}`}
             src={assets.dropdown_icon}
@@ -85,7 +85,7 @@ const Collection = () => {
             showFilter ? "" : "hidden"
           } sm:block`}
         >
-          <p className="mb-3 text-sm font-medium ">CATEGORIES</p>
+          <p className="mb-3 text-sm font-medium ">CATÉGORIES</p>
           <div className="flex flex-col gap-2 text-sm font-light text-gray-700">
             <p className="flex gap-2">
               <input
@@ -123,7 +123,7 @@ const Collection = () => {
             showFilter ? "" : "hidden"
           } sm:block`}
         >
-          <p className="mb-3 text-sm font-medium ">SUBCATEGORIES</p>
+          <p className="mb-3 text-sm font-medium ">SOUS-CATÉGORIES</p>
           <div className="flex flex-col gap-2 text-sm font-light text-gray-700">
             <p className="flex gap-2">
               <input
@@ -164,9 +164,13 @@ const Collection = () => {
             onChange={(e) => setSortType(e.target.value)}
             className="border-2 border-gray-300 text-sm px-2"
           >
-            <option value="relavent">Sort by : relavent</option>
-            <option value="low-high">Sort by : low to high </option>
-            <option value="high-low">Sort by : high to low</option>
+            <option value="relavent">Trier par : pertinent</option>
+            <option value="low-high">
+              Trier par : du plus bas au plus élevé{" "}
+            </option>
+            <option value="high-low">
+              Trier par : du plus élevé au plus bas
+            </option>
           </select>
         </div>
         {/**Map Products */}

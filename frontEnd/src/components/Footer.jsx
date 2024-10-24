@@ -8,23 +8,25 @@ const Footer = () => {
         <div>
           <img src={assets.logo} className="mb-5 w-32" alt="" />
           <p className="w-full md:w-3/2 text-gray-600">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ut
-            neque, laudantium facere autem aliquam, magnam minima molestiae
-            eveniet nobis enim fugit molestias dicta blanditiis. Soluta harum
-            nemo ea itaque?
+            Bienvenue chez PromoPhone ! Découvrez notre vaste sélection de
+            téléphones de dernière génération et d'accessoires mobiles de
+            qualité. Que vous recherchiez un smartphone performant ou des
+            gadgets innovants, nous avons ce qu'il vous faut à des prix
+            imbattables. Profitez d'offres exceptionnelles et d'un service
+            client dédié pour une expérience d'achat inégalée !
           </p>
         </div>
         <div>
-          <p className="text-xl font-medium mb-5">Company</p>
+          <p className="text-xl font-medium mb-5">Société</p>
           <ul className="flex flex-col gap-1 text-gray-600">
-            <li>Home</li>
-            <li>About us</li>
-            <li>Delivery</li>
-            <li>Privacy policy</li>
+            <li>ACCUEIL</li>
+            <li>À PROPOS</li>
+            <li>Livraison</li>
+            <li>Politique de Confidentialité</li>
           </ul>
         </div>
         <div>
-          <p className="text-xl font-medium mb-5">GET IN TOUCH</p>
+          <p className="text-xl font-medium mb-5">CONTACTEZ-NOUS</p>
           <ul className="flex flex-col gap-1 text-gray-600">
             <li>+213-540-596-016</li>
             <li>boussetta13yahia@gmail.com</li>

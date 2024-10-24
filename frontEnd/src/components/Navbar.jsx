@@ -27,7 +27,7 @@ const Navbar = () => {
       </Link>
       <ul className="hidden sm:flex gap-5 text-sm text-gray-700">
         <NavLink to="/" className="flex flex-col items-center gap-1">
-          <p>HOME</p>
+          <p>ACCUEIL</p>
           <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
         </NavLink>
         <NavLink to="/collection" className="flex flex-col items-center gap-1">
@@ -35,7 +35,7 @@ const Navbar = () => {
           <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
         </NavLink>
         <NavLink to="/about" className="flex flex-col items-center gap-1">
-          <p>ABOUT</p>
+          <p>À PROPOS</p>
           <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
         </NavLink>
         <NavLink to="/contact" className="flex flex-col items-center gap-1">
@@ -60,15 +60,15 @@ const Navbar = () => {
           {token && (
             <div className="group-hover:block hidden absolute dropdown-menu right-0 pt-4">
               <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded">
-                <p className="cursor-pointer hover:text-black">My Profile</p>
+                <p className="cursor-pointer hover:text-black">MON PROFIL</p>
                 <p
                   onClick={() => navigate("/orders")}
                   className="cursor-pointer hover:text-black"
                 >
-                  Orders
+                  COMMANDES
                 </p>
                 <p onClick={logout} className="cursor-pointer hover:text-black">
-                  Logout
+                  DÉCONNEXION
                 </p>
               </div>
             </div>
@@ -99,14 +99,14 @@ const Navbar = () => {
             className="flex items-center gap-4 p-3 cursor-pointer"
           >
             <img src={assets.dropdown_icon} className="h-4 rotate-180" alt="" />
-            <p>Back</p>
+            <p>RETOUR</p>
           </div>
           <NavLink
             onClick={() => setVisible(false)}
             className="py-2 pl-6 border"
             to="/"
           >
-            Home
+            ACCUEIL
           </NavLink>
           <NavLink
             onClick={() => setVisible(false)}
@@ -120,7 +120,7 @@ const Navbar = () => {
             className="py-2 pl-6 border"
             to="/about"
           >
-            ABOUT
+            À PROPOS
           </NavLink>
           <NavLink
             onClick={() => setVisible(false)}

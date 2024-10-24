@@ -14,7 +14,7 @@ const Add = ({ token }) => {
   const [price, setPrice] = useState("");
   const [category, setCategory] = useState("phone");
   const [subCategory, setSubCategory] = useState("audio");
-  const [bestseller, setBestseller] = useState(false);
+  const [bestSeller, setBestseller] = useState(false);
   const [sizes, setSizes] = useState([]);
   const onSubmitHandler = async (e) => {
     e.preventDefault();
@@ -25,7 +25,7 @@ const Add = ({ token }) => {
       formData.append("price", price);
       formData.append("category", category);
       formData.append("subCategory", subCategory);
-      formData.append("bestseller", bestseller);
+      formData.append("bestSeller", bestSeller);
       formData.append("sizes", JSON.stringify(sizes));
 
       image1 && formData.append("image1", image1);
@@ -261,11 +261,12 @@ const Add = ({ token }) => {
       <div className="flex gap-2 mt-2">
         <input
           type="checkbox"
-          id="bestseller"
+          id="bestSeller"
           onChange={() => setBestseller((prev) => !prev)}
-          checked={bestseller}
+          checked={bestSeller}
         />
-        <label className="cursor-pointer" htmlFor="bestseller">
+
+        <label className="cursor-pointer" htmlFor="bestSeller">
           add to best seller
         </label>
       </div>

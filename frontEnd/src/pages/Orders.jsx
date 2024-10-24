@@ -53,8 +53,8 @@ const Orders = () => {
                     {" "}
                     {item.price} {currency}{" "}
                   </p>
-                  <p>Quantity : {item.quantity}</p>
-                  <p>Size : {item.size}</p>
+                  <p>Quantité : {item.quantity}</p>
+                  <p>Taille : {item.size}</p>
                 </div>
                 <p className="mt-1">
                   Date :{" "}
@@ -63,7 +63,7 @@ const Orders = () => {
                   </span>{" "}
                 </p>
                 <p className="mt-2">
-                  Payment :{" "}
+                  Paiement :{" "}
                   <span className="text-gray-400">{item.paymentMethod}</span>{" "}
                 </p>
               </div>
@@ -77,7 +77,7 @@ const Orders = () => {
                 onClick={loadOrderData}
                 className="border px-4 py-2 text-sm font-medium rounded-sm"
               >
-                Track Order
+                Suivre la commande
               </button>
             </div>
           </div>

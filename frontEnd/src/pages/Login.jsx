@@ -60,7 +60,7 @@ const Login = () => {
         <input
           type="text"
           className="w-full px-3 border border-gray-800 "
-          placeholder="Name"
+          placeholder="Nom"
           required
           value={name}
           onChange={(e) => setName(e.target.value)}
@@ -77,20 +77,20 @@ const Login = () => {
       <input
         type="password"
         className="w-full px-3 border border-gray-800 "
-        placeholder="Password"
+        placeholder="Mot de pass"
         required
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
       <div className="w-full flex justify-between text-sm mt-[-8px]">
-        <p className="cursor-pointer">Forgot your password ?</p>
+        <p className="cursor-pointer"> Mot de passe oublié ?</p>
         {currentState === "Login" ? (
           <p
             onClick={() => setCurrentState("Sign Up")}
             className="cursor-pointer"
           >
             {" "}
-            Create Account
+            Créer un compte
           </p>
         ) : (
           <p
@@ -98,12 +98,12 @@ const Login = () => {
             className="cursor-pointer"
           >
             {" "}
-            Login Here
+            Connectez-vous ici
           </p>
         )}
       </div>
       <button className="bg-black text-white font-light px-8 py-2 mt-4">
-        {currentState === "Login" ? "Sign In" : "Sing Up"}
+        {currentState === "Login" ? "Se connecter" : "S'inscrire"}
       </button>
     </form>
   );
