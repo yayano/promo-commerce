@@ -5,6 +5,7 @@
 
 * {
   font-family: Outfit;
+  @apply transition-colors duration-200;
 }
 a.active hr {
   display: block;
