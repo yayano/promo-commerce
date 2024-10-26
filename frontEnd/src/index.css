@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Prata&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Outfit:wght@100..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -22,5 +23,26 @@ a.active hr {
   a.active {
     background-color: black;
     color: white;
+  }
+}
+.clock {
+  font-family: "Orbitron";
+}
+@media (max-width: 770px) {
+  .calendar,
+  .ampm {
+    font-size: 0.7rem;
+  }
+
+  .hour {
+    font-size: 4rem;
+  }
+
+  .clock {
+    padding: 5px;
+  }
+
+  .countdown {
+    font-size: 4rem;
   }
 }
