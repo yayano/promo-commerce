@@ -19,8 +19,10 @@ import support_img from "./support_img.png";
 import support_img_dark from "./support_img_dark.png";
 import menu_icon from "./menu_icon.png";
 import menu_icon_dark from "./menu_icon_dark.png";
-import about_img from "./about_img.png";
-import contact_img from "./contact_img.png";
+import about_img from "./about_img.jpg";
+import about_img_dark from "./about_img_dark.jpg";
+import contact_img from "./contact_img.jpg";
+import contact_img_dark from "./contact_img_dark.jpg";
 import razorpay_logo from "./razorpay_logo.png";
 import stripe_logo from "./stripe_logo.png";
 import cross_icon from "./cross_icon.png";
@@ -49,7 +51,9 @@ export const assets = {
   menu_icon,
   menu_icon_dark,
   about_img,
+  about_img_dark,
   contact_img,
+  contact_img_dark,
   razorpay_logo,
   stripe_logo,
   cross_icon,

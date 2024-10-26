@@ -2,7 +2,9 @@ import React from "react";
 import Title from "../components/Title";
 import { assets } from "../assets/assets";
 import NewsLetterBox from "../components/NewsLetterBox";
+import useTheme from "../context/theme";
 const About = () => {
+  const { themeMode, darkTheme, lightTheme } = useTheme();
   return (
     <div>
       <div className="text-2xl text-center pt-8 border-t">
@@ -10,7 +12,7 @@ const About = () => {
       </div>
       <div className="my-10 flex flex-col md:flex-row gap-16">
         <img
-          src={assets.about_img}
+          src={themeMode === "light" ? assets.about_img : assets.about_img_dark}
           className="w-full md:max-w-[450px] "
           alt=""
         />
