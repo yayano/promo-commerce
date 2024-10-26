@@ -3,8 +3,9 @@ import { ShopContext } from "../context/ShopContext";
 import Title from "../components/Title";
 import { assets } from "../assets/assets";
 import CartTotal from "../components/CartTotal";
-
+import useTheme from "../context/theme";
 const Cart = () => {
+  const { themeMode, darkTheme, lightTheme } = useTheme();
   const { products, currency, cartItems, updateQuantity, navigate } =
     useContext(ShopContext);
   const [cartData, setCartData] = useState([]);
@@ -41,11 +42,11 @@ const Cart = () => {
               <div className="flex items-start gap-6">
                 <img src={product.image[0]} className="w-16 sm:w-20" alt="" />
                 <div>
-                  <p className="text-xs sm:text-lg font-medium ">
+                  <p className="text-xs sm:text-lg font-medium dark:text-gray-300 ">
                     {product.name}
                   </p>
-                  <div className="flex items-center gap-5 mt-2">
-                    <p>
+                  <div className="flex items-center gap-5 mt-2 ">
+                    <p className="dark:text-gray-400">
                       {product.price}
                       {currency}
                     </p>
@@ -72,7 +73,9 @@ const Cart = () => {
               />
               <img
                 className="w-4 mr-4 sm:w-5 cursor-pointer"
-                src={assets.bin_icon}
+                src={
+                  themeMode === "light" ? assets.bin_icon : assets.bin_icon_dark
+                }
                 alt=""
                 onClick={() => updateQuantity(item._id, item.size, 0)}
               />
@@ -86,7 +89,7 @@ const Cart = () => {
           <div className="w-full text-end">
             <button
               onClick={() => navigate("/place-order")}
-              className="bg-black text-white text-sm my-8 px-8 py-3"
+              className="bg-black text-white text-sm my-8 px-8 py-3 dark:text-[#121212] dark:bg-[#fff] dark:opacity-85 dark:active:bg-gray-700"
             >
               PROCEED TO CHECKOUT{" "}
             </button>

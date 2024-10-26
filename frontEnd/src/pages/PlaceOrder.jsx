@@ -178,7 +178,7 @@ const PlaceOrder = () => {
           <div className="flex gap-3 flex-col lg:flex-row">
             <div
               onClick={() => setMethod("stripe")}
-              className="flex items-center gap-3 border p-2 px-3 cursor-pointer"
+              className="flex items-center gap-3 border p-2 px-3 cursor-pointer dark:text-[#121212] dark:bg-[#fff] dark:opacity-85"
             >
               <p
                 className={`min-w-3.5 h-3.5 border rounded-full ${
@@ -189,7 +189,7 @@ const PlaceOrder = () => {
             </div>
             <div
               onClick={() => setMethod("razorpay")}
-              className="flex items-center gap-3 border p-2 px-3 cursor-pointer"
+              className="flex items-center gap-3 border p-2 px-3 cursor-pointer dark:text-[#121212] dark:bg-[#fff] dark:opacity-85"
             >
               <p
                 className={`min-w-3.5 h-3.5 border rounded-full ${
@@ -200,7 +200,7 @@ const PlaceOrder = () => {
             </div>
             <div
               onClick={() => setMethod("cod")}
-              className="flex items-center gap-3 border p-2 px-3 cursor-pointer"
+              className="flex items-center gap-3 border p-2 px-3 cursor-pointer dark:text-[#121212] dark:bg-[#fff] dark:opacity-85"
             >
               <p
                 className={`min-w-3.5 h-3.5 border rounded-full ${
@@ -214,7 +214,7 @@ const PlaceOrder = () => {
           </div>
           <div className="w-full text-end mt-8">
             <button
-              className="bg-black text-white px-16 py-3 text-sm"
+              className="bg-black text-white px-16 py-3 text-sm dark:text-[#121212] dark:bg-[#fff] dark:opacity-85 dark:active:bg-gray-700"
               type="submit"
               onClick={onSubmitHandler}
             >

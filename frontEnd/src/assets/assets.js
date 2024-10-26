@@ -4,6 +4,7 @@ import hero_img from "./hero.jpg";
 import cart_icon_dark from "./cart_icon_dark.png";
 import cart_icon from "./cart_icon.png";
 import bin_icon from "./bin_icon.png";
+import bin_icon_dark from "./bin_icon_dark.png";
 import dropdown_icon from "./dropdown_icon.png";
 import exchange_icon from "./exchange_icon.png";
 import exchange_icon_dark from "./exchange_icon_dark.png";
@@ -42,6 +43,7 @@ export const assets = {
   star_dull_icon,
   star_icon,
   bin_icon,
+  bin_icon_dark,
   support_img,
   support_img_dark,
   menu_icon,
