@@ -70,7 +70,7 @@ const Collection = () => {
       <div className="min-w-60">
         <p
           onClick={() => setShowFilter(!showFilter)}
-          className="my-2 text-xl flex items-center cursor-pointer gap-2"
+          className="my-2 text-xl flex items-center cursor-pointer gap-2 dark:text-gray-200"
         >
           FILTRES
           <img
@@ -85,8 +85,10 @@ const Collection = () => {
             showFilter ? "" : "hidden"
           } sm:block`}
         >
-          <p className="mb-3 text-sm font-medium ">CATÉGORIES</p>
-          <div className="flex flex-col gap-2 text-sm font-light text-gray-700">
+          <p className="mb-3 text-sm font-medium dark:text-gray-300 ">
+            CATÉGORIES
+          </p>
+          <div className="flex flex-col gap-2 text-sm font-light text-gray-700 dark:text-gray-400">
             <p className="flex gap-2">
               <input
                 type="checkbox"
@@ -123,8 +125,10 @@ const Collection = () => {
             showFilter ? "" : "hidden"
           } sm:block`}
         >
-          <p className="mb-3 text-sm font-medium ">SOUS-CATÉGORIES</p>
-          <div className="flex flex-col gap-2 text-sm font-light text-gray-700">
+          <p className="mb-3 text-sm font-medium dark:text-gray-300 ">
+            SOUS-CATÉGORIES
+          </p>
+          <div className="flex flex-col gap-2 text-sm font-light text-gray-700 dark:text-gray-400">
             <p className="flex gap-2">
               <input
                 type="checkbox"
@@ -162,7 +166,7 @@ const Collection = () => {
           {/**Products Sort */}
           <select
             onChange={(e) => setSortType(e.target.value)}
-            className="border-2 border-gray-300 text-sm px-2"
+            className="border-2 border-gray-300 text-sm px-2 dark:bg-[#121212] dark:border-gray-400 dark:text-gray-400"
           >
             <option value="relavent">Trier par : pertinent</option>
             <option value="low-high">

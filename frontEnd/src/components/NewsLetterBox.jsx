@@ -6,10 +6,10 @@ const NewsLetterBox = () => {
   };
   return (
     <div className="text-center">
-      <p className="text-2x1 font-medium text-gray-800">
+      <p className="text-2x1 font-medium text-gray-800 dark:text-gray-200">
         Abonnez-vous maintenant et obtenez 20 % de réduction
       </p>
-      <p className="text-gray-400 mt-3">
+      <p className="text-gray-400 dark:text-gray-300 mt-3">
         Rejoignez notre communauté et soyez le premier à recevoir nos offres
         exclusives, des nouvelles et des conseils de mode.
       </p>
@@ -20,12 +20,12 @@ const NewsLetterBox = () => {
         <input
           type="email"
           placeholder="Entrer votre email"
-          className="w-full sm:flex-1 outline-none"
+          className="w-full sm:flex-1 outline-none dark:bg-[#121212] dark:text-gray-200"
           required
         />
         <button
           type="submit"
-          className="bg-black text-white text-xs px-10 py-4"
+          className="bg-black text-white dark:text-[#121212] dark:bg-[#fff] dark:opacity-85 text-xs px-10 py-4"
         >
           S'ABONNER
         </button>

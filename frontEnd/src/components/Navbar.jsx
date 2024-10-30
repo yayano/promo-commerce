@@ -1,10 +1,13 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { assets } from "../assets/assets";
 import { ShopContext } from "../context/ShopContext";
-
+import ThemeBtn from "../components/ThemeBtn";
+import useTheme from "../context/theme";
 const Navbar = () => {
+  const { themeMode, darkTheme, lightTheme } = useTheme();
   const [visible, setVisible] = useState(false);
+
   const {
     setShowSearch,
     showSearch,
@@ -23,29 +26,36 @@ const Navbar = () => {
   return (
     <div className="flex items-center justify-between py-5 font-medium">
       <Link to="/">
-        <img src={assets.logo} className="w-36" alt="" />
+        <img
+          src={themeMode === "light" ? assets.logo : assets.darkLogo}
+          className="w-36"
+          alt=""
+        />
       </Link>
-      <ul className="hidden sm:flex gap-5 text-sm text-gray-700">
+      <ul className="hidden sm:flex gap-5 text-sm text-gray-700 dark:text-gray-400">
         <NavLink to="/" className="flex flex-col items-center gap-1">
           <p>ACCUEIL</p>
-          <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
+          <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 dark:bg-gray-400 hidden" />
         </NavLink>
         <NavLink to="/collection" className="flex flex-col items-center gap-1">
           <p>COLLECTION</p>
-          <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
+          <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 dark:bg-gray-400 hidden" />
         </NavLink>
         <NavLink to="/about" className="flex flex-col items-center gap-1">
           <p>À PROPOS</p>
-          <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
+          <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 dark:bg-gray-400 hidden" />
         </NavLink>
         <NavLink to="/contact" className="flex flex-col items-center gap-1">
           <p>CONTACT</p>
-          <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
+          <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 dark:bg-gray-400 hidden" />
         </NavLink>
       </ul>
-      <div className="flex items-center gap-6">
+      <ThemeBtn />
+      <div className="flex items-center gap-6 ">
         <img
-          src={assets.search_icon}
+          src={
+            themeMode === "light" ? assets.search_icon : assets.search_icon_dark
+          }
           onClick={() => setShowSearch(!showSearch)}
           className="w-5 cursor-pointer"
           alt=""
@@ -53,7 +63,11 @@ const Navbar = () => {
         <div className="group relative">
           <img
             className="w-5 cursor-pointer "
-            src={assets.profile_icon}
+            src={
+              themeMode === "light"
+                ? assets.profile_icon
+                : assets.profile_icon_dark
+            }
             alt=""
             onClick={() => (token ? null : navigate("/login"))}
           />
@@ -75,13 +89,19 @@ const Navbar = () => {
           )}
         </div>
         <Link to="/cart" className="relative">
-          <img src={assets.cart_icon} className="w-5 min-w-5" alt="" />
+          <img
+            src={
+              themeMode === "light" ? assets.cart_icon : assets.cart_icon_dark
+            }
+            className="w-5 min-w-5"
+            alt=""
+          />
           <p className="absolute right-[-15px] bottom-[-5px] w-4 text-center leading-4 bg-red-500 text-white aspect-square rounded-full text-[8px]">
             {getCartCount()}
           </p>
         </Link>
         <img
-          src={assets.menu_icon}
+          src={themeMode === "light" ? assets.menu_icon : assets.menu_icon_dark}
           className="w-5 cursor-pointer sm:hidden"
           alt=""
           onClick={() => setVisible(true)}
@@ -89,11 +109,11 @@ const Navbar = () => {
       </div>
       {/** Sidebar menu for small screen  */}
       <div
-        className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ${
+        className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white dark:bg-[#121212] transition-all ${
           visible ? "w-full" : "w-0"
         }`}
       >
-        <div className="flex flex-col text-gray-600">
+        <div className="flex flex-col text-gray-600 dark:text-gray-300">
           <div
             onClick={() => setVisible(false)}
             className="flex items-center gap-4 p-3 cursor-pointer"
