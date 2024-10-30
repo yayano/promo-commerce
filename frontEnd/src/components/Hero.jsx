@@ -1,6 +1,5 @@
 import React from "react";
 import { assets } from "../assets/assets";
-import { Clock } from "./clock/Clock";
 
 const Hero = () => {
   return (
@@ -8,9 +7,6 @@ const Hero = () => {
       {/** Hero Left Side */}
       <div className="w-full sm:w-1/2 flex items-center justify-center py-10 sm:py-0">
         <div className="text-[#414141] dark:text-[#e2e2e2]">
-          <div className="w-[450px] relative">
-            <Clock />
-          </div>
           <div className="flex items-center gap-2">
             <p className="w-8 md:w-11 h-[2px] bg-[#414141] dark:bg-[#fff]"></p>
             <p className="font-medium text-sm md:text-base  ">
