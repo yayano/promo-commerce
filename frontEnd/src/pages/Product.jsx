@@ -3,18 +3,20 @@ import { useParams } from "react-router-dom";
 import { ShopContext } from "../context/ShopContext";
 import { assets } from "../assets/assets";
 import RelatedProducts from "../components/RelatedProducts";
-
+import PlaceOrder from "./PlaceOrder";
 const Product = () => {
   const { productId } = useParams();
   const { products, currency, addToCart } = useContext(ShopContext);
   const [productData, setProductData] = useState(false);
   const [image, setImage] = useState("");
-  const [size, setSize] = useState("");
+  const [size, setSize] = useState("S");
 
+  const directOrder = () => {};
   const fetchProductData = async () => {
     products.map((item) => {
       if (item._id === productId) {
         setProductData(item);
+        console.log(item);
         setImage(item.image[0]);
         return;
       }
@@ -70,7 +72,7 @@ const Product = () => {
           <p className="mt-5 text-gray-500 md:w-4/5 dark:text-[#fff] dark:opacity-85">
             {productData.description}
           </p>
-          <div className="flex flex-col gap-4 my-8 ">
+          <div className="hidden flex-col gap-4 my-8 ">
             <p className="dark:text-[#fff] dark:opacity-85">Select Size</p>
             <div className="flex gap-2 ">
               {productData.sizes.map((item, index) => (
@@ -87,8 +89,14 @@ const Product = () => {
             </div>
           </div>
           <button
+            onClick={() => directOrder(productData._id, size)}
+            className="bg-black text-white dark:text-[#121212] dark:bg-[#fff] dark:opacity-85 px-8 py-3 text-sm active:bg-gray-700 dark:active:bg-gray-700 mt-5"
+          >
+            COMMANDER
+          </button>
+          <button
             onClick={() => addToCart(productData._id, size)}
-            className="bg-black text-white dark:text-[#121212] dark:bg-[#fff] dark:opacity-85 px-8 py-3 text-sm active:bg-gray-700 dark:active:bg-gray-700"
+            className="ml-5 bg-black text-white dark:text-[#121212] dark:bg-[#fff] dark:opacity-85 px-8 py-3 text-sm active:bg-gray-700 dark:active:bg-gray-700 mt-5"
           >
             ADD TO CARD
           </button>
@@ -100,6 +108,7 @@ const Product = () => {
           </div>
         </div>
       </div>
+      <PlaceOrder />
       {/**Description and review section */}
       <div className="mt-20">
         <div className="flex dark:text-gray-200">

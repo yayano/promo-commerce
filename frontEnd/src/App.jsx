@@ -27,7 +27,6 @@ const App = () => {
   useEffect(() => {
     document.querySelector("html").classList.remove("dark", "light");
     document.querySelector("html").classList.add(themeMode);
-    console.log(themeMode);
   }, [themeMode]);
   return (
     <ThemeProvider value={{ themeMode, darkTheme, lightTheme }}>

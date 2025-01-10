@@ -4,9 +4,8 @@ import orderModel from "../models/orderModel.js";
 //placing orders using COD function
 const placeOrder = async (req, res) => {
   try {
-    const { userId, items, amount, address } = req.body;
+    const { items, amount, address } = req.body;
     const orderData = {
-      userId,
       items,
       address,
       amount,
@@ -16,7 +15,7 @@ const placeOrder = async (req, res) => {
     };
     const newOrder = new orderModel(orderData);
     await newOrder.save();
-    await userModel.findByIdAndUpdate(userId, { cartData: {} });
+    //await userModel.findByIdAndUpdate(userId, { cartData: {} });
     res.json({ success: true, message: "Order Placed" });
   } catch (error) {
     console.log(error);

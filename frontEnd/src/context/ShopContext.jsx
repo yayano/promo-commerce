@@ -13,6 +13,7 @@ const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
   const navigate = useNavigate();
   const [token, setToken] = useState("");
+  const orderKnow = async (itemId) => {};
   const addToCart = async (itemId, size) => {
     let cartData = structuredClone(cartItems);
 
@@ -95,7 +96,7 @@ const ShopContextProvider = (props) => {
   const getProductsData = async () => {
     try {
       const response = await axios.get(backendUrl + "/api/products/list");
-      console.log(response.data);
+
       if (response.data.success) {
         setProducts(response.data.products);
       } else {
