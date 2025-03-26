@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 
-const orderSchema = new mongoose.Schema({
-  userId: { type: String },
+const guestOrderSchema = new mongoose.Schema({
   items: { type: Array, required: true },
   amount: { type: Number, required: true },
   address: { type: Object, required: true },
@@ -10,7 +9,6 @@ const orderSchema = new mongoose.Schema({
   payment: { type: Boolean, required: true, default: false },
   date: { type: Number, required: true },
 });
-
-const orderModel =
-  mongoose.models.order || mongoose.model("order", orderSchema);
-export default orderModel;
+const guestOrderModel =
+  mongoose.models.guest || mongoose.model("guest", guestOrderSchema);
+export default guestOrderModel;

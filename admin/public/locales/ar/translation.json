@@ -1,0 +1,23 @@
+{
+  "uploadImage": "تحميل الصورة",
+  "productName": "اسم المنتج",
+  "productDescription": "وصف المنتج",
+  "productCategory": "فئة المنتج",
+  "productSubCategory": "الفئة الفرعية للمنتج",
+  "productPrice": "سعر المنتج",
+  "productSizes": "حجم المنتج",
+  "bestSeller": "إضافة إلى الأكثر مبيعًا",
+  "phone": "الهواتف",
+  "accessoire": "الإكسسوارات",
+  "pc": "الحاسوب",
+  "audio": "الصوتيات",
+  "confort": "الراحة",
+  "chargement": "الشحن",
+  "add": "إضافة",
+  "addItems": "إضافة عناصر",
+  "listItems": "قائمة العناصر",
+  "orders": "الطلبات",
+  "logout": "تسجيل الخروج",
+  "typeHere": "اكتب هنا...",
+  "writeHere": "اكتب هنا..."
+}

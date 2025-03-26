@@ -1,6 +1,6 @@
 import logo from "./promoLogo.png";
 import darkLogo from "./promoLogoDark.png";
-import hero_img from "./hero.jpg";
+import hero_img from "./about_img.jpg";
 import cart_icon_dark from "./cart_icon_dark.png";
 import cart_icon from "./cart_icon.png";
 import bin_icon from "./bin_icon.png";

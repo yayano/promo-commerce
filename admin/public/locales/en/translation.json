@@ -1,0 +1,23 @@
+{
+  "uploadImage": "Upload image",
+  "productName": "Product name",
+  "productDescription": "Product Description",
+  "productCategory": "Product Category",
+  "productSubCategory": "Product Sub Category",
+  "productPrice": " Product Price",
+  "productSize": " Product Size",
+  "bestSeller": "add to best seller",
+  "phone": "Phones",
+  "accessoire": "Accessoires",
+  "pc": "PC",
+  "audio": "Audio",
+  "confort": "Confort",
+  "chargement": "Chargement",
+  "add": "ADD",
+  "addItems": "Add Items",
+  "listItems": "List Items",
+  "orders": "Orders",
+  "logout": "Logout",
+  "typeHere": "Type here...",
+  "writeHere": "Write here..."
+}

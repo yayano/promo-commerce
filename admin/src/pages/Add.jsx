@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { assets } from "../assets/assets";
 import axios from "axios";
 import { backendUrl } from "../App";
 import { toast } from "react-toastify";
+import { useTranslation } from "react-i18next";
+
 const Add = ({ token }) => {
+  //translation
+  const [t, i18n] = useTranslation();
+  //products management
   const [image1, setImage1] = useState(false);
   const [image2, setImage2] = useState(false);
   const [image3, setImage3] = useState(false);
@@ -16,6 +21,7 @@ const Add = ({ token }) => {
   const [subCategory, setSubCategory] = useState("audio");
   const [bestSeller, setBestseller] = useState(false);
   const [sizes, setSizes] = useState([]);
+
   const onSubmitHandler = async (e) => {
     e.preventDefault();
     try {
@@ -57,13 +63,15 @@ const Add = ({ token }) => {
       toast.error(error.message);
     }
   };
+
   return (
     <form
       onSubmit={onSubmitHandler}
       className="flex flex-col w-full items-start gap-3"
     >
       <div>
-        <p className="mb-2">uploed image</p>
+        <p className="mb-2">{t("uploadImage")}</p>
+
         <div className="flex gap-2">
           <label htmlFor="image1">
             <img
@@ -120,50 +128,50 @@ const Add = ({ token }) => {
         </div>
       </div>
       <div className="w-full">
-        <p className="mb-2">Product Name</p>
+        <p className="mb-2">{t("productName")}</p>
         <input
           className="w-full max-w-[500px] px-3 py-2"
           type="text"
-          placeholder="type here"
+          placeholder={t("typeHere")}
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
       </div>
       <div className="w-full">
-        <p className="mb-2">Product Description</p>
+        <p className="mb-2">{t("productDescription")}</p>
         <textarea
           className="w-full max-w-[500px] px-3 py-2"
           type="text"
-          placeholder="write here"
+          placeholder={t("writeHere")}
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
       </div>
       <div className="flex flex-col sm:flex-row gap-2 w-full sm:gap-8">
         <div>
-          <p className="mb-2">Product Category</p>
+          <p className="mb-2">{t("productCategory")}</p>
           <select
             onChange={(e) => setCategory(e.target.value)}
             className="w-full px-3 py-2"
           >
-            <option value="Phone">Phone</option>
-            <option value="Accessoires">Accessoires</option>
-            <option value="PC">PC</option>
+            <option value="Phone">{t("phone")}</option>
+            <option value="Accessoires">{t("accessoire")}</option>
+            <option value="PC">{t("pc")}</option>
           </select>
         </div>
         <div>
-          <p className="mb-2">Product Sub Category</p>
+          <p className="mb-2">{t("productSubCategory")}</p>
           <select
             onChange={(e) => setSubCategory(e.target.value)}
             className="w-full px-3 py-2"
           >
-            <option value="Audio">Audio</option>
-            <option value="Confort">Confort</option>
-            <option value="Chargement">Chargement</option>
+            <option value="Audio">{t("audio")}</option>
+            <option value="Confort">{t("confort")}</option>
+            <option value="Chargement">{t("chargement")}</option>
           </select>
         </div>
         <div>
-          <p className="mb-2">Product Price</p>
+          <p className="mb-2">{t("productPrice")}</p>
           <input
             className="w-full sm:w-[120px] px-3 py-2"
             type="Number"
@@ -174,7 +182,7 @@ const Add = ({ token }) => {
         </div>
       </div>
       <div>
-        <p className="mb-2">Product sizes </p>
+        <p className="mb-2">{t("productSize")}</p>
         <div className="flex gap-3">
           <div>
             <p
@@ -267,11 +275,11 @@ const Add = ({ token }) => {
         />
 
         <label className="cursor-pointer" htmlFor="bestSeller">
-          add to best seller
+          {t("bestSeller")}
         </label>
       </div>
       <button type="submit" className="w-28 py-3 mt-4 bg-black text-white">
-        ADD
+        {t("add")}
       </button>
     </form>
   );

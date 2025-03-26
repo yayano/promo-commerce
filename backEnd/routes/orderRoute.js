@@ -10,11 +10,11 @@ import userAuth from "../middleware/auth.js";
 const orderRouter = express.Router();
 
 //admin endpoints
-orderRouter.post("/list", adminAuth, allOrders);
+orderRouter.post("/list", allOrders);
 orderRouter.post("/status", adminAuth, updateStatus);
 
 //payment endpoints
-orderRouter.post("/place", placeOrder);
+orderRouter.post("/place", userAuth, placeOrder);
 
 //user endpoints
 orderRouter.post("/userOrders", userAuth, userOrders);

@@ -1,7 +1,8 @@
 import React from "react";
 import { assets } from "../assets/assets";
-
+import useTheme from "../context/theme";
 const Hero = () => {
+  const { themeMode, darkTheme, lightTheme } = useTheme();
   return (
     <div className="flex flex-col sm:flex-row border border-gray-400 dark:border-gray-500">
       {/** Hero Left Side */}
@@ -26,7 +27,7 @@ const Hero = () => {
       </div>
       {/** Hero Right Side */}
       <img
-        src={assets.hero_img}
+        src={themeMode === "light" ? assets.hero_img : assets.about_img_dark}
         className="w-full sm:w-1/2 p-1 border rounded-lg dark:border-none  "
         alt=""
       />

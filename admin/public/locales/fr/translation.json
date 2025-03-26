@@ -1,0 +1,23 @@
+{
+  "uploadImage": "Télécharger une image",
+  "productName": "Nom du produit",
+  "productDescription": "Description du produit",
+  "productCategory": "Catégorie du produit",
+  "productSubCategory": "Sous-catégorie du produit",
+  "productPrice": "Prix du produit",
+  "productSize": "Taille du produit",
+  "bestSeller": "Ajouter aux meilleures ventes",
+  "phone": "Téléphones",
+  "accessoire": "Accessoires",
+  "pc": "PC",
+  "audio": "Audio",
+  "confort": "Confort",
+  "chargement": "Chargement",
+  "add": "AJOUTER",
+  "addItems": "Ajouter des articles",
+  "listItems": "Lister les articles",
+  "orders": "Commandes",
+  "logout": "Déconnexion",
+  "typeHere": "Tapez ici...",
+  "writeHere": "Écrivez ici..."
+}

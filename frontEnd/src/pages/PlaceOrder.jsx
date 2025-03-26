@@ -59,6 +59,19 @@ const PlaceOrder = () => {
       };
       switch (method) {
         case "cod":
+          if (!token) {
+            const response = await axios.post(
+              backendUrl + "/api/guest/place",
+              orderData
+            );
+            if (response.data.success) {
+              setCartItems({});
+              navigate("/");
+            } else {
+              toast.error(response.data.message);
+            }
+            break;
+          }
           const response = await axios.post(
             backendUrl + "/api/order/place",
             orderData,

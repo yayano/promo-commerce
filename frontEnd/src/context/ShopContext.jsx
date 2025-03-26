@@ -13,6 +13,7 @@ const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
   const navigate = useNavigate();
   const [token, setToken] = useState("");
+
   const orderKnow = async (itemId) => {};
   const addToCart = async (itemId, size) => {
     let cartData = structuredClone(cartItems);
