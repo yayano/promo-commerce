@@ -3,7 +3,9 @@ import { ShopContext } from "../context/ShopContext";
 import { assets } from "../assets/assets";
 import { useLocation } from "react-router-dom";
 import useTheme from "../context/theme";
+import { useTranslation } from "react-i18next";
 const Searchbar = () => {
+  const [t, i18n] = useTranslation();
   const { themeMode, darkTheme, lightTheme } = useTheme();
   const { search, setSearch, showSearch, setShowSearch } =
     useContext(ShopContext);
@@ -23,7 +25,7 @@ const Searchbar = () => {
           onChange={(e) => setSearch(e.target.value)}
           className="flex-1 outline-none bg-inherit text-sm dark:text-gray-200"
           type="text"
-          placeholder="Rechercher"
+          placeholder={t("search")}
         />
         <img
           src={

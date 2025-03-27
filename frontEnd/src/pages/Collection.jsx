@@ -3,8 +3,9 @@ import { ShopContext } from "../context/ShopContext";
 import { assets } from "../assets/assets";
 import Title from "../components/Title";
 import ProductItem from "../components/ProductItem";
-
+import { useTranslation } from "react-i18next";
 const Collection = () => {
+  const [t, i18n] = useTranslation();
   const { products, search, showSearch } = useContext(ShopContext);
   const [showFilter, setShowFilter] = useState(false);
   const [filterProducts, setFilterProducts] = useState([]);
@@ -75,7 +76,7 @@ const Collection = () => {
           onClick={() => setShowFilter(!showFilter)}
           className="my-2 text-xl flex items-center cursor-pointer gap-2 dark:text-gray-200"
         >
-          FILTRES
+          {t("filters")}
           <img
             className={`h-3 sm:hidden ${showFilter ? "rotate-90" : ""}`}
             src={assets.dropdown_icon}
@@ -89,7 +90,7 @@ const Collection = () => {
           } sm:block`}
         >
           <p className="mb-3 text-sm font-medium dark:text-gray-300 ">
-            CATÉGORIES
+            {t("categories")}
           </p>
           <div className="flex flex-col gap-2 text-sm font-light text-gray-700 dark:text-gray-400">
             <p className="flex gap-2">
@@ -98,8 +99,8 @@ const Collection = () => {
                 className="w-3"
                 value={"Accessoires"}
                 onChange={toggleCategory}
-              />{" "}
-              Accessoires
+              />
+              {t("accessoire")}
             </p>
             <p className="flex gap-2">
               <input
@@ -107,8 +108,8 @@ const Collection = () => {
                 className="w-3"
                 value={"Phones"}
                 onChange={toggleCategory}
-              />{" "}
-              Phones
+              />
+              {t("phone")}
             </p>
             <p className="flex gap-2">
               <input
@@ -116,8 +117,8 @@ const Collection = () => {
                 className="w-3"
                 value={"PC"}
                 onChange={toggleCategory}
-              />{" "}
-              PC
+              />
+              {t("pc")}
             </p>
           </div>
         </div>
@@ -129,7 +130,7 @@ const Collection = () => {
           } sm:block`}
         >
           <p className="mb-3 text-sm font-medium dark:text-gray-300 ">
-            SOUS-CATÉGORIES
+            {t("subCategories")}
           </p>
           <div className="flex flex-col gap-2 text-sm font-light text-gray-700 dark:text-gray-400">
             <p className="flex gap-2">
@@ -139,7 +140,7 @@ const Collection = () => {
                 value={"Audio"}
                 onChange={toggleSubCategory}
               />{" "}
-              Audio
+              {t("audio")}
             </p>
             <p className="flex gap-2">
               <input
@@ -148,7 +149,7 @@ const Collection = () => {
                 value={"Confort"}
                 onChange={toggleSubCategory}
               />{" "}
-              Confort
+              {t("confort")}
             </p>
             <p className="flex gap-2">
               <input
@@ -157,7 +158,7 @@ const Collection = () => {
                 value={"Chargement"}
                 onChange={toggleSubCategory}
               />{" "}
-              Chargement
+              {t("chargement")}
             </p>
           </div>
         </div>
@@ -165,19 +166,15 @@ const Collection = () => {
       {/**right side products */}
       <div className="flex-1 ">
         <div className="flex justify-between text-base sm:text-2xl mb-4">
-          <Title text1={"ALL"} text2={"COLLECTIONS"} />
+          <Title text1={t("allCollections")} text2={""} />
           {/**Products Sort */}
           <select
             onChange={(e) => setSortType(e.target.value)}
             className="border-2 border-gray-300 text-sm px-2 dark:bg-[#121212] dark:border-gray-400 dark:text-gray-400"
           >
-            <option value="relavent">Trier par : pertinent</option>
-            <option value="low-high">
-              Trier par : du plus bas au plus élevé{" "}
-            </option>
-            <option value="high-low">
-              Trier par : du plus élevé au plus bas
-            </option>
+            <option value="relavent">{t("sortByRelevant")}</option>
+            <option value="low-high">{t("sortByLowToHigh")}</option>
+            <option value="high-low">{t("sortByHighToLow")}</option>
           </select>
         </div>
         {/**Map Products */}

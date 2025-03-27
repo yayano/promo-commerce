@@ -4,10 +4,12 @@ import { assets } from "../assets/assets";
 import { ShopContext } from "../context/ShopContext";
 import ThemeBtn from "../components/ThemeBtn";
 import useTheme from "../context/theme";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useTranslation } from "react-i18next";
 const Navbar = () => {
   const { themeMode, darkTheme, lightTheme } = useTheme();
   const [visible, setVisible] = useState(false);
-
+  const [t, i18n] = useTranslation();
   const {
     setShowSearch,
     showSearch,
@@ -32,21 +34,22 @@ const Navbar = () => {
           alt=""
         />
       </Link>
+      <LanguageSwitcher />
       <ul className="hidden sm:flex gap-5 text-sm text-gray-700 dark:text-gray-400">
         <NavLink to="/" className="flex flex-col items-center gap-1">
-          <p>ACCUEIL</p>
+          <p>{t("home")}</p>
           <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 dark:bg-gray-400 hidden" />
         </NavLink>
         <NavLink to="/collection" className="flex flex-col items-center gap-1">
-          <p>COLLECTION</p>
+          <p>{t("collection")}</p>
           <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 dark:bg-gray-400 hidden" />
         </NavLink>
         <NavLink to="/about" className="flex flex-col items-center gap-1">
-          <p>À PROPOS</p>
+          <p>{t("about")}</p>
           <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 dark:bg-gray-400 hidden" />
         </NavLink>
         <NavLink to="/contact" className="flex flex-col items-center gap-1">
-          <p>CONTACT</p>
+          <p>{t("contact")}</p>
           <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 dark:bg-gray-400 hidden" />
         </NavLink>
       </ul>
@@ -74,15 +77,17 @@ const Navbar = () => {
           {token && (
             <div className="group-hover:block hidden absolute dropdown-menu right-0 pt-4">
               <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded">
-                <p className="cursor-pointer hover:text-black">MON PROFIL</p>
+                <p className="cursor-pointer hover:text-black">
+                  {t("myProfile")}
+                </p>
                 <p
                   onClick={() => navigate("/orders")}
                   className="cursor-pointer hover:text-black"
                 >
-                  COMMANDES
+                  {t("orders")}
                 </p>
                 <p onClick={logout} className="cursor-pointer hover:text-black">
-                  DÉCONNEXION
+                  {t("logout")}
                 </p>
               </div>
             </div>

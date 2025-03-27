@@ -4,7 +4,9 @@ import Title from "../components/Title";
 import { assets } from "../assets/assets";
 import CartTotal from "../components/CartTotal";
 import useTheme from "../context/theme";
+import { useTranslation } from "react-i18next";
 const Cart = () => {
+  const [t, i18n] = useTranslation();
   const { themeMode, darkTheme, lightTheme } = useTheme();
   const { products, currency, cartItems, updateQuantity, navigate } =
     useContext(ShopContext);
@@ -29,7 +31,7 @@ const Cart = () => {
   return (
     <div className="border-t pt-14">
       <div className="text-2xl mb-3">
-        <Title text1={"YOUR"} text2={"CARD"} />
+        <Title text1={t("yourCart")} text2={""} />
       </div>
       <div>
         {cartData.map((item, index) => {
@@ -91,7 +93,7 @@ const Cart = () => {
               onClick={() => navigate("/place-order")}
               className="bg-black text-white text-sm my-8 px-8 py-3 dark:text-[#121212] dark:bg-[#fff] dark:opacity-85 dark:active:bg-gray-700"
             >
-              PROCEED TO CHECKOUT{" "}
+              {t("proceedToCheckout")}
             </button>
           </div>
         </div>

@@ -2,21 +2,20 @@ import React, { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../context/ShopContext";
 import Title from "./Title";
 import ProductItem from "./ProductItem";
-
+import { useTranslation } from "react-i18next";
 const LatestCollection = () => {
   const { products } = useContext(ShopContext);
   const [latestProducts, setLatestProducts] = useState([]);
+  const [t, i18n] = useTranslation("");
   useEffect(() => {
     setLatestProducts(products.slice(0, 10));
   }, [products]);
   return (
     <div className="my-10">
       <div className="text-center py-8 text-3xl">
-        <Title text1={" DERNIÈRE "} text2={"COLLECTION"} />
+        <Title text1={t("latest")} text2={t("collect")} />
         <p className="w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300">
-          Découvrez notre toute nouvelle sélection de produits tendance,
-          soigneusement conçus pour répondre à vos besoins. Ne manquez pas les
-          dernières nouveautés qui allient style et fonctionnalité !
+          {t("latestCollection")}
         </p>
       </div>
       {/**Render Products */}

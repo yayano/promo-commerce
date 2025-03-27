@@ -3,7 +3,9 @@ import { assets } from "../assets/assets";
 import Title from "../components/Title";
 import NewsLetterBox from "../components/NewsLetterBox";
 import useTheme from "../context/theme";
+import { useTranslation } from "react-i18next";
 const Contact = () => {
+  const [t, i18n] = useTranslation();
   const { themeMode, darkTheme, lightTheme } = useTheme();
   return (
     <div>
@@ -20,23 +22,22 @@ const Contact = () => {
         />
         <div className="flex flex-col justify-center items-start gap-6  ">
           <p className="font-semibold text-xl text-gray-800 dark:text-gray-300">
-            Notre Magasin
+            {t("ourStore")}
           </p>
           <p className="text-gray-500 dark:text-gray-300">
-            Boufarik City <br /> Rue Mamou Ahmed
+            {t("storeAddress")}
           </p>
           <p className="text-gray-500 dark:text-gray-300">
-            Tel: (+213) 540-415-927 <br /> Email: Boussetta13yahia@gmail.com
+            {t("phoneContact")} (+213) 540-415-927 <br /> Email:
+            Boussetta13yahia@gmail.com
           </p>
           <p className="font-semibold text-xl text-gray-800 dark:text-gray-200">
             {" "}
             PROMO-PHONE
           </p>
-          <p className="text-gray-500 dark:text-gray-300">
-            Learn more about aour teams and job opening.
-          </p>
+          <p className="text-gray-500 dark:text-gray-300">{t("learnMore")}</p>
           <button className="border border-black px-8 py-4 text-sm hover:bg-black hover:text-white transition-all duration-500 dark:text-[#121212] dark:bg-[#fff] dark:opacity-85 dark:active:bg-gray-700 dark:hover:bg-gray-300">
-            Explore Jobs
+            {t("exploreJobs")}
           </button>
         </div>
       </div>

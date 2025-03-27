@@ -1,17 +1,18 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const NewsLetterBox = () => {
+  const [t, i18n] = useTranslation();
   const onSubmitHandler = (e) => {
     e.preventDefault();
   };
   return (
     <div className="text-center">
       <p className="text-2x1 font-medium text-gray-800 dark:text-gray-200">
-        Abonnez-vous maintenant et obtenez 20 % de réduction
+        {t("subscribeNow")}
       </p>
       <p className="text-gray-400 dark:text-gray-300 mt-3">
-        Rejoignez notre communauté et soyez le premier à recevoir nos offres
-        exclusives, des nouvelles et des conseils de mode.
+        {t("subscribeDescription")}
       </p>
       <form
         onSubmit={onSubmitHandler}
@@ -19,7 +20,7 @@ const NewsLetterBox = () => {
       >
         <input
           type="email"
-          placeholder="Entrer votre email"
+          placeholder={t("enterYourEmail")}
           className="w-full sm:flex-1 outline-none dark:bg-[#121212] dark:text-gray-200"
           required
         />
@@ -27,7 +28,7 @@ const NewsLetterBox = () => {
           type="submit"
           className="bg-black text-white dark:text-[#121212] dark:bg-[#fff] dark:opacity-85 text-xs px-10 py-4"
         >
-          S'ABONNER
+          {t("subscribeButton")}
         </button>
       </form>
     </div>

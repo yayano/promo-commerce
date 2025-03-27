@@ -2,7 +2,9 @@ import React, { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../context/ShopContext";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { useTranslation } from "react-i18next";
 const Login = () => {
+  const [t, i18n] = useTranslation();
   const [currentState, setCurrentState] = useState("Login");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -51,7 +53,9 @@ const Login = () => {
       className="flex flex-col items-center w-[90%] sm:max-w-96 m-auto mt-14 gap-4 text-gray-800"
     >
       <div className="inline-flex text-center gap-2 mb-2 mt-10 ">
-        <p className="prata-regular text-3xl">{currentState}</p>
+        <p className="prata-regular text-3xl">
+          {currentState === "Login" ? t("signIn") : t("signUp")}
+        </p>
         <hr className="border-non h-[1.5px] w-8 bg-gray-800" />
       </div>
       {currentState === "Login" ? (
@@ -60,7 +64,7 @@ const Login = () => {
         <input
           type="text"
           className="w-full px-3 border border-gray-800 "
-          placeholder="Nom"
+          placeholder={t("Name")}
           required
           value={name}
           onChange={(e) => setName(e.target.value)}
@@ -77,33 +81,31 @@ const Login = () => {
       <input
         type="password"
         className="w-full px-3 border border-gray-800 "
-        placeholder="Mot de pass"
+        placeholder={t("password")}
         required
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
       <div className="w-full flex justify-between text-sm mt-[-8px]">
-        <p className="cursor-pointer"> Mot de passe oublié ?</p>
+        <p className="cursor-pointer"> {t("forgotPassword")}</p>
         {currentState === "Login" ? (
           <p
             onClick={() => setCurrentState("Sign Up")}
             className="cursor-pointer"
           >
-            {" "}
-            Créer un compte
+            {t("createAccount")}
           </p>
         ) : (
           <p
             onClick={() => setCurrentState("Login")}
             className="cursor-pointer"
           >
-            {" "}
-            Connectez-vous ici
+            {t("loginHere")}
           </p>
         )}
       </div>
       <button className="bg-black text-white font-light px-8 py-2 mt-4">
-        {currentState === "Login" ? "Se connecter" : "S'inscrire"}
+        {currentState === "Login" ? t("signIn") : t("signUp")}
       </button>
     </form>
   );
