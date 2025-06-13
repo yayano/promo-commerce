@@ -1,4 +1,5 @@
 import logo from "./promoLogo.png";
+import gtedLogo from "./gtedLogo.png"
 import darkLogo from "./promoLogoDark.png";
 import hero_img from "./about_img.jpg";
 import cart_icon_dark from "./cart_icon_dark.png";
@@ -30,6 +31,7 @@ import cross_icon_dark from "./cross_icon_dark.png";
 
 export const assets = {
   logo,
+  gtedLogo,
   darkLogo,
   hero_img,
   cart_icon,

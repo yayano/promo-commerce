@@ -29,7 +29,7 @@ const Navbar = () => {
     <div className="flex items-center justify-between py-5 font-medium">
       <Link to="/">
         <img
-          src={themeMode === "light" ? assets.logo : assets.darkLogo}
+          src={themeMode === "light" ? assets.gtedLogo : assets.gtedLogo}
           className="w-36"
           alt=""
         />

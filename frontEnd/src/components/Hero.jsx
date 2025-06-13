@@ -17,7 +17,7 @@ const Hero = () => {
             </p>
           </div>
           <h1 className="text-3xl sm:py-3 lg:text-5xl leading-relaxed prata-regular">
-            Promo Phone
+            GTEDtech
           </h1>
           <div className="flex items-center gap-2">
             <p className="font-semibold text-sm md:text-base ">

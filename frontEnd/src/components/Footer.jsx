@@ -11,7 +11,7 @@ const Footer = () => {
       <div className="flex flex-col sm:grid grid-cols-3 gap-14 my-10 mt-40 text-sm">
         <div>
           <img
-            src={themeMode === "light" ? assets.logo : assets.darkLogo}
+            src={themeMode === "light" ? assets.gtedLogo : assets.gtedLogo}
             className="mb-5 w-32"
             alt=""
           />
@@ -24,10 +24,10 @@ const Footer = () => {
             {t("company")}
           </p>
           <ul className="flex flex-col gap-1 text-gray-600 dark:text-gray-300">
-            <li>{t("home")}</li>
-            <li>{t("about")}</li>
-            <li>{t("shipping")}</li>
-            <li>{t("privacyPolicy")}</li>
+            <li>Quanzhou Gaoqiyi Electronic Technology Co., Ltd.</li>
+            <li>Registration No. : 91350583MA32QXHN21</li>
+            <li>No. 159 Jianzaihou, Wenshan Village, Xiamei Town Quzhou Fujian China</li>
+            <li>boussaw@gmail.com</li>
           </ul>
         </div>
         <div>
@@ -35,8 +35,8 @@ const Footer = () => {
             {t("contactUs")}
           </p>
           <ul className="flex flex-col gap-1 text-gray-600 dark:text-gray-300">
-            <li>+213-540-596-016</li>
-            <li>boussetta13yahia@gmail.com</li>
+            <li>+213-550-129-066</li>
+            <li>boussaw@gmail.com</li>
           </ul>
         </div>
       </div>

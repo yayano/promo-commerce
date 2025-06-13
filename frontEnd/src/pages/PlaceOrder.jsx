@@ -5,9 +5,11 @@ import { assets } from "../assets/assets";
 import { ShopContext } from "../context/ShopContext";
 import { toast } from "react-toastify";
 import axios from "axios";
+import AddressSelector from "../components/AddressSelector";
 
 const PlaceOrder = () => {
   const [method, setMethod] = useState("cod");
+  const [address, setAddress] = useState("");
   const {
     navigate,
     backendUrl,
@@ -20,13 +22,6 @@ const PlaceOrder = () => {
   } = useContext(ShopContext);
   const [formData, setFormData] = useState({
     firstName: "",
-    lastName: "",
-    email: "",
-    street: "",
-    city: "",
-    state: "",
-    zipCode: "",
-    country: "",
     phone: "",
   });
   const onChangeHandler = (event) => {
@@ -93,10 +88,12 @@ const PlaceOrder = () => {
       toast.error(error.message);
     }
   };
+  const handleSelection = (selected) => {
+    setAddress(selected);
+  };
   return (
     <form className="flex flex-col sm:flex-row justify-between gap-4 pt-5 sm:pt-14 min-h-[80vh] border-t">
       {/**---------------Left Side --------------- */}
-      {console.log(formData)}
       <div className="flex flex-col gap-4 w-full sm:max-w-[480px]">
         <div className="text-xl sm:text-2xl my-3 ">
           <Title text1={"DELIVERY"} text2={"INFORMATION"} />
@@ -110,66 +107,6 @@ const PlaceOrder = () => {
             value={formData.firstName}
             onChange={onChangeHandler}
           />
-          <input
-            className="border border-gray-300 rounded py-1.5 px-3.5 w-full"
-            type="text"
-            placeholder="Last name"
-            name="lastName"
-            value={formData.lastName}
-            onChange={onChangeHandler}
-          />
-        </div>
-        <input
-          className="border border-gray-300 rounded py-1.5 px-3.5 w-full"
-          type="email"
-          placeholder="Email Address"
-          name="email"
-          value={formData.email}
-          onChange={onChangeHandler}
-        />
-        <input
-          className="border border-gray-300 rounded py-1.5 px-3.5 w-full"
-          type="text"
-          placeholder="Street"
-          name="street"
-          value={formData.street}
-          onChange={onChangeHandler}
-        />
-        <div className="flex gap-3">
-          <input
-            className="border border-gray-300 rounded py-1.5 px-3.5 w-full"
-            type="text"
-            placeholder="City"
-            name="city"
-            value={formData.city}
-            onChange={onChangeHandler}
-          />
-          <input
-            className="border border-gray-300 rounded py-1.5 px-3.5 w-full"
-            type="text"
-            placeholder="State"
-            name="state"
-            value={formData.state}
-            onChange={onChangeHandler}
-          />
-        </div>
-        <div className="flex gap-3">
-          <input
-            className="border border-gray-300 rounded py-1.5 px-3.5 w-full"
-            type="number"
-            placeholder="Zip code"
-            name="zipCode"
-            value={formData.zipCode}
-            onChange={onChangeHandler}
-          />
-          <input
-            className="border border-gray-300 rounded py-1.5 px-3.5 w-full"
-            type="text"
-            placeholder="Country"
-            name="country"
-            value={formData.country}
-            onChange={onChangeHandler}
-          />
         </div>
         <input
           className="border border-gray-300 rounded py-1.5 px-3.5 w-full"
@@ -179,6 +116,7 @@ const PlaceOrder = () => {
           value={formData.phone}
           onChange={onChangeHandler}
         />
+        <AddressSelector onSelect={handleSelection} />
       </div>
       {/**------------Right Side---------- */}
       <div className="mt-8 ">

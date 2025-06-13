@@ -28,12 +28,12 @@ const Contact = () => {
             {t("storeAddress")}
           </p>
           <p className="text-gray-500 dark:text-gray-300">
-            {t("phoneContact")} (+213) 540-415-927 <br /> Email:
-            Boussetta13yahia@gmail.com
+            {t("phoneContact")} (+213) 550129066 <br /> Email:
+            boussaw@gmail.com
           </p>
           <p className="font-semibold text-xl text-gray-800 dark:text-gray-200">
             {" "}
-            PROMO-PHONE
+            GTEDtech
           </p>
           <p className="text-gray-500 dark:text-gray-300">{t("learnMore")}</p>
           <button className="border border-black px-8 py-4 text-sm hover:bg-black hover:text-white transition-all duration-500 dark:text-[#121212] dark:bg-[#fff] dark:opacity-85 dark:active:bg-gray-700 dark:hover:bg-gray-300">
